@@ -23,10 +23,17 @@ function (app) {
     });
   }
 
+  function showDocumentDetails(code) {
+    require(['app/views/document-details'], function (view) {
+      view.show(app, code);
+    });
+  }
+
   router.route('/', showView1);
   router.route('/link1', showView1);
   router.route('/link2', showView2);
   router.route('/link3', showView3);
+  router.route('/document-details/:code', showDocumentDetails);
 
   function start() {
     app.init('#container');

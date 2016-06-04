@@ -1,22 +1,18 @@
 /*  */
 'use strict';
 var express = require('express');
-var models = require('../models');
+var documents = require('../documents');
 
 var router = express.Router();
 
-router.get('/tasks', function (req, res) {
-  models.Task.findAll().then(function (tasks) {
-    res.json(tasks);
-  });
+router.get('/documents', function (req, res) {
+  res.json(documents);
 });
 
-router.post('/tasks', function (req, res) {
-  models.Task.create({
-    title: req.body.title
-  }).then(function (task) {
-    res.json(task);
-  });
+router.get('/documents/:code', function (req, res) {
+  res.json(documents.filter(function (document) {
+    return document.code.indexOf(req.params.code) >= 0;
+  }));
 });
 
 module.exports = router;

@@ -1,1 +1,27 @@
-<h1>View 2</h1>
+<h1>Find info by reference</h1>
+
+<p>Search documents by reference</p>
+
+<form>
+  <div class="input-group">
+    <input type="search" class="form-control" placeholder="Reference" aria-describedby="basic-addon2">
+    <span class="input-group-addon" id="basic-addon2">
+      <span class="glyphicon glyphicon-search"></span>
+      Search
+    </span>
+  </div>
+</form>
+<table class="table table-striped table-compact">
+  <tbody data-template="document-row-template" data-bind="source: documents">
+  </tbody>
+</table>
+<script id="document-row-template" type="text/kendo-ui-template">
+<tr>
+<td>
+<a data-bind="text: code" href="/\#/document-details/#: code#"></a>
+</td>
+<td>
+<a data-bind="text: name" href="/\#/document-details/#: code#"></a>
+</td>
+</tr>
+</script>

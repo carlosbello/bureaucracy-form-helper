@@ -4,13 +4,19 @@ function (view) {
   'use strict';
 
   var vmView1 = kendo.observable({
+    docments: [],
+
     init: function (app) {
       this.app = app;
       return this;
     },
 
     load: function () {
-      console.log('Load data for view2');
+      this.set('documents', [
+        {code: 'acd-1', name: 'Document One'},
+        {code: 'xdd-13', name: 'Document for 13'},
+        {code: 'bzgf', name: 'Document buff'}
+      ]);
     }
   });
 
