@@ -1,0 +1,12 @@
+{
+  "extends": "airbnb-es5",
+  "env": {
+    "node": true
+  },
+  "rules": {
+      "func-names": "off",
+      "space-before-function-paren": ["warn", { "anonymous": "always", "named": "never" }],
+      "no-console": "off",
+      "new-cap": ["error", { "capIsNewExceptions": ["Router"] }]
+  }
+}

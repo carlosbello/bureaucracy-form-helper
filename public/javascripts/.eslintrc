@@ -1,0 +1,16 @@
+{
+  "extends": "airbnb-es5",
+  "env": {
+    "browser": true,
+    "amd": true,
+    "jquery": true
+  },
+  "globals": {
+    "kendo": true
+  },
+  "rules": {
+      "func-names": "off",
+      "space-before-function-paren": ["warn", { "anonymous": "always", "named": "never" }],
+      "no-console": "off"
+  }
+}
