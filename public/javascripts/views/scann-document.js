@@ -16,6 +16,14 @@ function (view) {
     launchCamera: function (e) {
       e.preventDefault();
       $('#capture').click();
+    },
+
+    processImage: function () {
+      kendo.ui.progress($('#picture-form'), true);
+      setTimeout(function () {
+        kendo.ui.progress($('#picture-form'), false);
+        document.location.hash = '/document-details/xdd-13';
+      }, 1500);
     }
   });
 
