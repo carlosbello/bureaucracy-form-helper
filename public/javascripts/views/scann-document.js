@@ -20,10 +20,11 @@ function (view) {
 
     processImage: function () {
       kendo.ui.progress($('#picture-form'), true);
-      setTimeout(function () {
+      $.getJSON('/api/documents/random', function (result) {
+        document.location.hash = '/document-details/' + result.code;
+      }).always(function () {
         kendo.ui.progress($('#picture-form'), false);
-        document.location.hash = '/document-details/xdd-13';
-      }, 1500);
+      });
     }
   });
 

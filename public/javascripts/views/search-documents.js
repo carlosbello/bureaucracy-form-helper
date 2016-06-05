@@ -4,7 +4,7 @@ function (view) {
   'use strict';
 
   var vmView1 = kendo.observable({
-    docments: [],
+    documents: [],
 
     init: function (app) {
       this.app = app;
@@ -12,11 +12,13 @@ function (view) {
     },
 
     load: function () {
-      this.set('documents', [
-        {code: 'acd-1', name: 'Document One'},
-        {code: 'xdd-13', name: 'Document for 13'},
-        {code: 'bzgf', name: 'Document buff'}
-      ]);
+      var that = this;
+      kendo.ui.progress($('#container'), true);
+      $.getJSON('/api/documents', function (documents) {
+        that.set('documents', documents);
+      }).always(function () {
+        kendo.ui.progress($('#container'), false);
+      });
     }
   });
 

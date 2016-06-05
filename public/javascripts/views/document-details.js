@@ -13,8 +13,20 @@ function (view) {
     },
 
     load: function (documentCode) {
-      this.set('code', documentCode);
-      this.set('name', 'Document name: ' + documentCode);
+      var that = this;
+      kendo.ui.progress($('#container'), true);
+      $.getJSON('/api/documents/' + documentCode, function (results) {
+        var doc;
+        if (results.length) {
+          doc = results[0];
+          that.set('code', doc.code);
+          that.set('name', doc.name);
+          that.set('description', doc.description);
+          that.set('url', doc.url);
+        }
+      }).always(function () {
+        kendo.ui.progress($('#container'), false);
+      });
     }
   });
 
