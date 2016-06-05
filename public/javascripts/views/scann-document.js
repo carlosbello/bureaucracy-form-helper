@@ -1,4 +1,4 @@
-define(['text!templates/view1.html',
+define(['text!templates/scann-document.html',
         'k/kendo.binder.min'],
 function (view) {
   'use strict';
@@ -11,12 +11,17 @@ function (view) {
 
     load: function () {
       console.log('Load data for view1');
+    },
+
+    launchCamera: function (e) {
+      e.preventDefault();
+      $('#capture').click();
     }
   });
 
   return {
     show: function (app) {
-      var vm = app.showView('view1', view, vmView1).model;
+      var vm = app.showView('scann-document', view, vmView1).model;
       vm.init(app).load();
     }
   };

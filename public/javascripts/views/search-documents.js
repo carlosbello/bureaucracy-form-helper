@@ -1,4 +1,4 @@
-define(['text!templates/view2.html',
+define(['text!templates/search-documents.html',
         'k/kendo.binder.min'],
 function (view) {
   'use strict';
@@ -22,7 +22,7 @@ function (view) {
 
   return {
     show: function (app) {
-      var vm = app.showView('view2', view, vmView1).model;
+      var vm = app.showView('search-documents', view, vmView1).model;
       vm.init(app).load();
     }
   };

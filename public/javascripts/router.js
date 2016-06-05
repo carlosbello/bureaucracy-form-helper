@@ -5,20 +5,14 @@ function (app) {
 
   var router = new kendo.Router();
 
-  function showView1() {
-    require(['app/views/view1'], function (view) {
+  function scannDocument() {
+    require(['app/views/scann-document'], function (view) {
       view.show(app);
     });
   }
 
-  function showView2() {
-    require(['app/views/view2'], function (view) {
-      view.show(app);
-    });
-  }
-
-  function showView3() {
-    require(['app/views/view3'], function (view) {
+  function searchDocuments() {
+    require(['app/views/search-documents'], function (view) {
       view.show(app);
     });
   }
@@ -29,10 +23,9 @@ function (app) {
     });
   }
 
-  router.route('/', showView1);
-  router.route('/link1', showView1);
-  router.route('/link2', showView2);
-  router.route('/link3', showView3);
+  router.route('/', scannDocument);
+  router.route('/scann-document', scannDocument);
+  router.route('/search-documents', searchDocuments);
   router.route('/document-details/:code', showDocumentDetails);
 
   function start() {
