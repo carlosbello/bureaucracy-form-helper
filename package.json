@@ -6,7 +6,8 @@
     "start": "node ./bin/www",
     "lint-front": "cd public/javascripts; node ../../node_modules/eslint/bin/eslint.js .",
     "lint-back": "node node_modules/eslint/bin/eslint.js .",
-    "front-install": "cd public; ../node_modules/bower/bin/bower install kendo-ui-core bootstrap lodash"
+    "front-install": "cd public; ../node_modules/bower/bin/bower install kendo-ui-core bootstrap lodash",
+    "postinstall": "cd public; ../node_modules/bower/bin/bower install kendo-ui-core bootstrap lodash"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -19,11 +20,11 @@
     "pg": "^4.5.5",
     "sequelize": "^3.23.2",
     "serve-favicon": "~2.3.0",
-    "sqlite3": "^3.1.4"
+    "sqlite3": "^3.1.4",
+    "bower": "^1.7.9"
   },
   "devDependencies": {
     "babel-eslint": "~6.0.4",
-    "bower": "^1.7.9",
     "eslint": "~2.11.0",
     "eslint-config-airbnb-es5": "~1.0.9",
     "eslint-plugin-react": "~5.1.1",
