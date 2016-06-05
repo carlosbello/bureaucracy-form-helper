@@ -1,0 +1,13 @@
+{
+  "name": "B.Helper",
+  "description": "Bureaucrazy form helper",
+  "launch_path": "/",
+  "icons": {
+    "128": "/imgages/icon-128.png"
+  },
+  "developer": {
+    "name": "Your name or organization",
+    "url": "http://your-homepage-here.org"
+  },
+  "default_locale": "en"
+}
